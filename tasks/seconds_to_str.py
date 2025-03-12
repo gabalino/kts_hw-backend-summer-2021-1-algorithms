@@ -16,4 +16,21 @@ def seconds_to_str(seconds: int) -> str:
         >> seconds_to_str(93600)
         01d02h00m00s
     """
-    raise NotImplementedError
+    time = seconds
+    time_str = f"{(time % 60):02}s"
+    time = time // 60
+    if time > 0:
+        time_str = f"{(time % 60):02}m{time_str}"
+        time = time // 60
+        if time > 0:
+            time_str = f"{(time % 24):02}h{time_str}"
+            time = time // 24
+            if time > 0:
+                time_str = f"{(time % 30):02}d{time_str}"
+                time = time // 30
+                if time > 0:
+                    time_str = f"{(time % 12):02}m{time_str}"
+                    time = time // 12
+                    if time > 0:
+                        time_str = f"{(time):02}y{time_str}"
+    return time_str
