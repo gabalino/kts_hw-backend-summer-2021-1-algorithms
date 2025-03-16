@@ -1,3 +1,5 @@
+import re
+
 __all__ = ("find_shortest_longest_word",)
 
 
@@ -14,4 +16,14 @@ def find_shortest_longest_word(text: str) -> tuple[str, str] | tuple[None, None]
         >> find_shortest_longest_word(" \n\t ")
         (None, None)
     """
-    raise NotImplementedError
+    shortest_word = None
+    longest_word = None
+
+    words = re.findall(r"\w+", text)
+    words.sort(key=len)
+    if len(words) > 0:
+        shortest_word = words[0]
+        longest_word = words[-1]
+
+    result = (shortest_word, longest_word)
+    return result
