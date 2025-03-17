@@ -14,7 +14,7 @@ def even_odd(numbers: list[int]) -> float:
     odd = None
     length = len(numbers)
     even = sum(numbers[i] for i in range(0, length) if numbers[i] % 2 == 0)
-    odd = sum(numbers[i] for i in range(0 ,length) if numbers[i] % 2 == 1)
+    odd = sum(numbers[i] for i in range(0, length) if numbers[i] % 2 == 1)
 
     if odd != 0:
         result = even / odd

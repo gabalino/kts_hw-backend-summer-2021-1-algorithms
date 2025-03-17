@@ -2,6 +2,7 @@ __all__ = ("is_prime",)
 
 import math
 
+
 def is_prime(number: int) -> bool:
     """Определяет, является ли число простым.
 
